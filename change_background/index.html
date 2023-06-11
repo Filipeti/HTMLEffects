@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background</title>
+
+    <style>
+        body{
+            background: url("sfondo1.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var images = ["sfondo1.jpg", "sfondo2.png", "sfondo3.jpg"];
+        var currentIndex = 0;
+
+        function changeBackground(){
+            currentIndex = (currentIndex + 1) % images.length;
+            document.body.style.backgroundImage = "url(" + images[currentIndex] + ")";
+        }
+
+        setInterval(changeBackground, 5000); //You can change the time
+    </script>
+</body>
+</html>
